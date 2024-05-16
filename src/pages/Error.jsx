@@ -1,7 +1,7 @@
 export const ErrorPage = () => {
     return (
         <div>
-            Something went wrong, please go back.
+            <h2>Something went wrong, please go back.</h2>
         </div>
     )
 }

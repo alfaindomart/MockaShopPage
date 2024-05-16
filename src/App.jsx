@@ -1,18 +1,21 @@
 import './App.css'
-import { useState, useEffect } from 'react'
-import { Home } from './pages/Home'
+import { Header } from './components/Header';
+import { Link } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
+
 
 
 function App() {
 
-  const [products, setProducts] = useState(null)
-
-
   return (
-    <>
-    <Home />
-    </>
-  )
+    <div>
+        <Header />
+        <li>
+          <Outlet />
+            <Link to="shop">Shop Now</Link>
+        </li>
+    </div>
+)
 }
 
 export default App

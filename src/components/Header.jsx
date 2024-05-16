@@ -1,7 +1,7 @@
 export const Header = () => {
     return (
-        <div>
+        <span>
             test
-        </div>
+        </span>
     )
 } 
