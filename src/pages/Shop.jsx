@@ -13,7 +13,7 @@ export const Shop = () => {
                 console.log(data)
                 setProducts(data)
             })
-            console.log(products)
+            .catch((error) => console.error(error))
   }, [])
 
   return (
@@ -21,12 +21,14 @@ export const Shop = () => {
         <h1>Welcome to the shop</h1>
         <div className="products-wrapper">
             {products && products.map(
-                product => {
-                <div className="fake-product" key={product.id} >
-                    <img src={product.image} alt={product.description} />
-                    <div>{product.title}</div>
-                    <div>{product.price}</div>
-                </div>}
+                product => (<div key={product.id}>
+                    <img src={product.image} alt={'a product picture of a ' + product.title} />
+                    <div>
+                        <div className="product-title">{product.title}</div>
+                        <div className="product-desc">{product.description}</div>
+                    </div>
+                </div>)
+                
             )}
         </div>
     </div>
