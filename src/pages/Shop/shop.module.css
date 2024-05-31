@@ -1,7 +1,16 @@
+* { outline: 1px solid red }
+
 #shop {
     display: flex;
 }
 
-.products-wrapper {
+.productsWrapper {
     display: flex;
+    flex-wrap: wrap;
 }
+
+.productCard {
+    display: flex;
+    flex-direction: column;
+}
+

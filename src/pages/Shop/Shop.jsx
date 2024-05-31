@@ -20,14 +20,15 @@ export const Shop = () => {
 
   return (
     <div id={styles.shop}>
-        <div className="shop-header">
+        <div className={styles.shopHeader}>
             <h2>Our best offer yet</h2>
             <p>dont forget to check discounts, this might be your lucky day!</p>
         </div>
         <Sidebar />
-        <div className="products-wrapper">
+        <div className={styles.productsWrapper}>
             {products && products.map(
-                product => (<div key={product.id}>
+                product => (
+                <div key={product.id} className={styles.productCard}>
                     <img src={product.image} alt={'a product picture of a ' + product.title} />
                     <div>
                         <div className="product-title">{product.title}</div>
