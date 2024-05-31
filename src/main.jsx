@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import App from './App.jsx'
 import { Home } from './pages/Home.jsx'
-import { Shop } from './pages/Shop.jsx'
+import { Shop } from './pages/Shop/Shop.jsx'
 import { ErrorPage } from './pages/Error.jsx'
 
 import './index.css'

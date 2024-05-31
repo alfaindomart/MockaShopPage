@@ -1,0 +1,7 @@
+#shop {
+    display: flex;
+}
+
+.products-wrapper {
+    display: flex;
+}

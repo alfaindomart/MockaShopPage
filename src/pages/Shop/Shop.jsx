@@ -1,3 +1,5 @@
+import styles from './shop.module.css'
+import { Sidebar } from '../../components/sidebar/Sidebar';
 import { useEffect, useState } from "react";
 
 export const Shop = () => {
@@ -17,8 +19,12 @@ export const Shop = () => {
   }, [])
 
   return (
-      <div>
-        <h1>Welcome to the shop</h1>
+    <div id={styles.shop}>
+        <div className="shop-header">
+            <h2>Our best offer yet</h2>
+            <p>dont forget to check discounts, this might be your lucky day!</p>
+        </div>
+        <Sidebar />
         <div className="products-wrapper">
             {products && products.map(
                 product => (<div key={product.id}>
@@ -28,7 +34,6 @@ export const Shop = () => {
                         <div className="product-desc">{product.description}</div>
                     </div>
                 </div>)
-                
             )}
         </div>
     </div>
