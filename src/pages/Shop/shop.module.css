@@ -2,15 +2,23 @@
 
 #shop {
     display: flex;
+    flex-direction: column;
+}
+
+.shopContent {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .productsWrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+
 }
 
 .productCard {
     display: flex;
     flex-direction: column;
+    max-width: 100px;
 }
 

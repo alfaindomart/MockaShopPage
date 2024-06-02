@@ -2,6 +2,9 @@ import styles from './shop.module.css'
 import { Sidebar } from '../../components/sidebar/Sidebar';
 import { useEffect, useState } from "react";
 
+import { Rating } from 'react-simple-star-rating';
+
+
 export const Shop = () => {
 
     const [products, setProducts] = useState([])
@@ -24,18 +27,27 @@ export const Shop = () => {
             <h2>Our best offer yet</h2>
             <p>dont forget to check discounts, this might be your lucky day!</p>
         </div>
-        <Sidebar />
-        <div className={styles.productsWrapper}>
-            {products && products.map(
-                product => (
-                <div key={product.id} className={styles.productCard}>
-                    <img src={product.image} alt={'a product picture of a ' + product.title} />
-                    <div>
-                        <div className="product-title">{product.title}</div>
-                        <div className="product-desc">{product.description}</div>
-                    </div>
-                </div>)
-            )}
+        <div className={styles.shopContent}>
+            <Sidebar />
+            <div className={styles.productsWrapper}>
+                {products && products.map(
+                    product => (
+                    <div key={product.id} className={styles.productCard}>
+                        <img src={product.image} alt={'a product picture of a ' + product.title} />
+                        <div>
+                            <div className="product-title">{product.title}</div>
+                            <div className="product-desc">{'$' + product.price}</div>
+                            <div className="product-rating">
+                                <Rating initialValue={product.rating.rate}
+                                onClick={function noRefCheck(){}}
+                                readonly
+                                />
+                                <div>({product.rating.count})</div>
+                            </div>
+                        </div>
+                    </div>)
+                )}
+            </div>
         </div>
     </div>
   )
