@@ -32,17 +32,21 @@ export const Shop = () => {
             <div className={styles.productsWrapper}>
                 {products && products.map(
                     product => (
-                    <div key={product.id} className={styles.productCard}>
-                        <img src={product.image} alt={'a product picture of a ' + product.title} />
-                        <div>
-                            <div className="product-title">{product.title}</div>
-                            <div className="product-desc">{'$' + product.price}</div>
-                            <div className="product-rating">
-                                <Rating initialValue={product.rating.rate}
-                                onClick={function noRefCheck(){}}
-                                readonly
-                                />
-                                <div>({product.rating.count})</div>
+                    <div key={product.id} className={styles.productLayout}>
+                        <div className={styles.productElement}>
+                            <div className={styles.prodImageWrapper}>
+                                <img src={product.image} alt={'a product picture of a ' + product.title} />
+                            </div>
+                            <div className={styles.prodContents}>
+                                <div className={styles.productTitle}>{product.title}</div>
+                                <div className={styles.productDesc}>{'$' + product.price}</div>
+                                <div className={styles.productRating}>
+                                    <Rating initialValue={product.rating.rate}
+                                    onClick={function noRefCheck(){}}
+                                    readonly
+                                    />
+                                    <div>({product.rating.count})</div>
+                                </div>
                             </div>
                         </div>
                     </div>)

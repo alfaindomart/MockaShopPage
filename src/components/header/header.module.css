@@ -1,10 +1,13 @@
-#header {
-    display: flex;
-    padding: 1rem;
+#headerElement {
+    position: sticky;
     background-color: forestgreen;
+    min-width: 100%;
+    max-height: 15vh;
+    height: 100%;
+}
 
-    top: o;
-    left: 0;
-    right: 0;
-    
+.headerLayout {
+    display: flex;
+    gap: 8px;
+    padding: 1rem;
 }

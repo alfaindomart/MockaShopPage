@@ -1,8 +1,16 @@
-* { outline: 1px solid red }
+* { 
+    outline: 1px solid red;    
+}
 
 #shop {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto;
+    margin: 1rem;
+}
+
+.shopHeader {
+    grid-column-start: span 3;
 }
 
 .shopContent {
@@ -12,7 +20,8 @@
 
 .productsWrapper {
     display: grid;
-    grid-template-columns: repeat(3, 33%);
+    grid-template-columns: repeat(3, 35%);
+    gap: 1rem;
 
 }
 
@@ -22,3 +31,9 @@
     max-width: 100px;
 }
 
+.productRating {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    width: 100px;
+}
