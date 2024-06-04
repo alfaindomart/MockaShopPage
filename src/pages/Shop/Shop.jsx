@@ -41,10 +41,13 @@ export const Shop = () => {
                                 <div className={styles.productTitle}>{product.title}</div>
                                 <div className={styles.productDesc}>{'$' + product.price}</div>
                                 <div className={styles.productRating}>
-                                    <Rating initialValue={product.rating.rate}
-                                    onClick={function noRefCheck(){}}
-                                    readonly
-                                    />
+                                    <div className={styles.ratingStar}>
+                                        <Rating initialValue={product.rating.rate}
+                                        onClick={function noRefCheck(){}}
+                                        readonly
+                                        size={16}
+                                        />    
+                                    </div>
                                     <div>({product.rating.count})</div>
                                 </div>
                             </div>
