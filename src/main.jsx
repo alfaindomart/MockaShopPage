@@ -6,8 +6,14 @@ import App from './App.jsx'
 import { Home } from './pages/Home.jsx'
 import { Shop } from './pages/Shop/Shop.jsx'
 import { ErrorPage } from './pages/Error.jsx'
+import { Product } from './pages/SingleProduct/SingleProduct.jsx'
+import { getProducts } from './products.js'
 
 import './index.css'
+
+export function loader() {
+  
+}
 
 const router = createBrowserRouter([
   {
@@ -23,6 +29,10 @@ const router = createBrowserRouter([
             path: "shop/",
             element: <Shop />
           },
+          {
+            path: "shop/product/:id",
+            element: <Product />,
+          }
         ]
       }
     ]

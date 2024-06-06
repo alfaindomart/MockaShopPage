@@ -1,6 +1,7 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styles from './shop.module.css'
 import { Sidebar } from '../../components/sidebar/Sidebar';
-import { useEffect, useState } from "react";
 import { getProducts } from '../../products';
 
 import { Rating } from 'react-simple-star-rating';
@@ -47,7 +48,7 @@ export const Shop = () => {
                                 <img src={product.image} alt={'a product picture of a ' + product.title} />
                             </div>
                             <div className={styles.prodContents}>
-                                <div className={styles.productTitle}>{product.title}</div>
+                                <Link to={`shop/product/${product.id}`} className={styles.productTitle}>{product.title}</Link>
                                 <div className={styles.productDesc}>{'$' + product.price}</div>
                                 <div className={styles.productRating}>
                                     <div className={styles.ratingStar}>
