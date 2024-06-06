@@ -1,6 +1,7 @@
 import styles from './shop.module.css'
 import { Sidebar } from '../../components/sidebar/Sidebar';
 import { useEffect, useState } from "react";
+import { getProducts } from '../../products';
 
 import { Rating } from 'react-simple-star-rating';
 
@@ -8,18 +9,26 @@ import { Rating } from 'react-simple-star-rating';
 export const Shop = () => {
 
     const [products, setProducts] = useState([])
+
+    useEffect(() => {
+    console.log(getProducts())
+    getProducts().then(data => {
+            console.log(data)
+            setProducts(data)
+        })
+    }, [])
     
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products?limit=10')
-            .then(res => res.json())
-            .then(data => 
-                {
-                console.log('test')
-                console.log(data)
-                setProducts(data)
-            })
-            .catch((error) => console.error(error))
-  }, [])
+//   useEffect(() => {
+//     fetch('https://fakestoreapi.com/products?limit=10')
+//             .then(res => res.json())
+//             .then(data => 
+//                 {
+//                 console.log('test')
+//                 console.log(data)
+//                 setProducts(data)
+//             })
+//             .catch((error) => console.error(error))
+//   }, [])
 
   return (
     <div id={styles.shop}>
