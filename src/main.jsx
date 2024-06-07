@@ -7,13 +7,11 @@ import { Home } from './pages/Home.jsx'
 import { Shop } from './pages/Shop/Shop.jsx'
 import { ErrorPage } from './pages/Error.jsx'
 import { Product } from './pages/SingleProduct/SingleProduct.jsx'
-import { getProducts } from './products.js'
+import { shopLoader } from './pages/Shop/Shop.jsx'
 
 import './index.css'
 
-export function loader() {
-  
-}
+
 
 const router = createBrowserRouter([
   {
@@ -27,7 +25,8 @@ const router = createBrowserRouter([
           { index: true, element: <Home /> },
           {
             path: "shop/",
-            element: <Shop />
+            element: <Shop />,
+            loader: shopLoader,
           },
           {
             path: "shop/product/:id",

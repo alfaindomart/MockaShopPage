@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { useEffect, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 import styles from './shop.module.css'
 import { Sidebar } from '../../components/sidebar/Sidebar';
 import { getProducts } from '../../products';
@@ -7,17 +7,28 @@ import { getProducts } from '../../products';
 import { Rating } from 'react-simple-star-rating';
 
 
+export async function shopLoader() {
+  const products= await getProducts()
+  console.log({products})
+  return {products}
+}
+
+
+
 export const Shop = () => {
 
-    const [products, setProducts] = useState([])
+    const {products} = useLoaderData()
+    console.log(products)
 
-    useEffect(() => {
-    console.log(getProducts())
-    getProducts().then(data => {
-            console.log(data)
-            setProducts(data)
-        })
-    }, [])
+    // const [products, setProducts] = useState([])
+
+    // useEffect(() => {
+    // console.log(getProducts())
+    // getProducts().then(data => {
+    //         console.log(data)
+    //         setProducts(data)
+    //     })
+    // }, [])
     
 //   useEffect(() => {
 //     fetch('https://fakestoreapi.com/products?limit=10')
