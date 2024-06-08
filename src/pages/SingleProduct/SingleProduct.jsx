@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 
 import { getSingleProd } from "../../products";
 import { Rating } from 'react-simple-star-rating';
+import { Addtocartbtn } from '../../components/add-cart-btn/Addtocart';
 
 export async function productLoader({params}) {
     console.log(params)
@@ -33,6 +34,7 @@ export const SingleProduct = () => {
                     <div>{product.rating.count}</div>
                 </div>
                 <div className={styles.productDesc}>{product.description}</div>
+                <Addtocartbtn />
             </div>
         </div>
     )
