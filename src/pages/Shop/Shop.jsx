@@ -9,15 +9,15 @@ import { Rating } from 'react-simple-star-rating';
 
 export async function shopLoader() {
   const products= await getProducts()
-  console.log({products})
-  return {products}
+  console.log(products)
+  return products
 }
 
 
 
 export const Shop = () => {
 
-    const {products} = useLoaderData()
+    const products = useLoaderData()
     console.log(products)
 
     // const [products, setProducts] = useState([])
@@ -59,7 +59,7 @@ export const Shop = () => {
                                 <img src={product.image} alt={'a product picture of a ' + product.title} />
                             </div>
                             <div className={styles.prodContents}>
-                                <Link to={`shop/product/${product.id}`} className={styles.productTitle}>{product.title}</Link>
+                                <Link to={`./product/${product.id}`} className={styles.productTitle}>{product.title}</Link>
                                 <div className={styles.productDesc}>{'$' + product.price}</div>
                                 <div className={styles.productRating}>
                                     <div className={styles.ratingStar}>
