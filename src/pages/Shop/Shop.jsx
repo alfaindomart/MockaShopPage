@@ -17,6 +17,7 @@ export async function shopLoader() {
 
 export const Shop = () => {
 
+
     const products = useLoaderData()
     console.log(products)
 
