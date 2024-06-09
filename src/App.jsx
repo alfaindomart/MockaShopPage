@@ -11,11 +11,11 @@ import { Cart } from './components/cart/Cart';
 
 function App() {
 
-  const [inCart, setInCart] = useState(1)
+  const [inCart, setInCart] = useState([])
 
   return (
     <>
-      <Header><Cart itemsInCart={inCart}/></Header>
+      <Header><Cart itemsInCart={inCart.length}/></Header>
         <Outlet context={[inCart, setInCart]} />
       <Footer />
     </>

@@ -34,7 +34,7 @@ export const SingleProduct = () => {
                     <div>{product.rating.count}</div>
                 </div>
                 <div className={styles.productDesc}>{product.description}</div>
-                <Addtocartbtn />
+                <Addtocartbtn currProduct={product}/>
             </div>
         </div>
     )

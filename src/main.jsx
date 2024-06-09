@@ -9,6 +9,7 @@ import { ErrorPage } from './pages/Error.jsx'
 import { SingleProduct } from './pages/SingleProduct/SingleProduct.jsx'
 import { shopLoader } from './pages/Shop/Shop.jsx'
 import { productLoader } from './pages/SingleProduct/SingleProduct.jsx'
+import { CheckOut } from './pages/CheckOut/CheckOut.jsx'
 
 import './index.css'
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
             element: <SingleProduct />,
             loader: productLoader,
           },
+          {
+            path: '/checkout/',
+            element: <CheckOut />
+          }
         ]
       }
     ]

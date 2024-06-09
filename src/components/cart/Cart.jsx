@@ -3,6 +3,7 @@ import styles from './cart.module.css'
 
 export const Cart = ({itemsInCart}) => {
 
+    console.log(itemsInCart)
     return (
         <div className={styles.cartLayout}>
             <div className={styles.cartElement}>
