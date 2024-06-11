@@ -10,8 +10,15 @@ export const Addtocartbtn = ({currProduct}) => {
         console.log(inCart)
     }
     return (
-        <span className={styles.btnElement}>
-            <button onClick={addProduct}>Add To Cart</button>
-        </span>
+        <div className={styles.mainLayout}>
+            <div className={styles.inputNumElement}>
+                <button>-</button>
+                <input type="number" name="addAmount" id="addAmount" />
+                <button>+</button>
+            </div>
+            <span className={styles.btnElement}>
+                <button onClick={addProduct}>Add To Cart</button>
+            </span>
+        </div>
     )
 }
