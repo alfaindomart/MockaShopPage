@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <Header><Cart itemsInCart={inCart.length}/></Header>
+      <Header><Cart itemsInCart={inCart.reduce((acc, obj) => {return acc + obj.amount}, 0)}/></Header>
         <Outlet context={[inCart, setInCart]} />
       <Footer />
     </>

@@ -10,7 +10,7 @@ export const CheckOut = () => {
         <div className={styles.mainLayout}>
             <div className={styles.prodsSmmryLayout}>
                 <div className={styles.prodsSmmryHeader}>
-                    <h2>Your Bag ({inCart.length})</h2>
+                    <h2>Your Bag ({inCart.reduce((acc, obj) => {return acc + obj.amount}, 0)})</h2>
                     <div>Share Bag</div>
                 </div>
                 <div className={styles.productsSummary}>
