@@ -16,7 +16,13 @@ export const Addtocartbtn = () => {
     // console.log(updatedProduct)
 
     function addProduct() {
-        if (checkDuplicate) {return setInCart(inCart.map(product => {if (product.id === currProduct.id) return {...product, amount: amount}}))}
+
+        //update the current product object if the product is in cart
+        if (checkDuplicate) {
+            return setInCart(inCart.map(product => 
+                {if (product.id === currProduct.id) return {...product, amount: amount}}))}
+                
+        //insert the current product to cart if duplicate not exist
         else return setInCart([...inCart, {...currProduct, amount: amount}])
     }
     console.log(inCart)

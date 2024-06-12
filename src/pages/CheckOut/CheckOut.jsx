@@ -3,7 +3,7 @@ import { useOutletContext } from 'react-router-dom'
 
 export const CheckOut = () => {
     
-    const [inCart] = useOutletContext()    
+    const [inCart, setInCart] = useOutletContext()    
     const cartAmount = inCart.reduce((acc, obj) => {return acc + obj.price}, 0)
     const shippingAmount = (cartAmount > 99 || inCart.length < 1) ? 0 : 30
     return (
@@ -21,6 +21,7 @@ export const CheckOut = () => {
                         </div>
                         <div className={styles.productTitle}>{product.title}</div>
                         <div className={styles.productPrice}>{product.price}</div>
+                        <button onClick={() => {setInCart(inCart.filter(prod => prod.id !== product.id))}}>X</button>
                     </div>
                 ))}
                 </div>
