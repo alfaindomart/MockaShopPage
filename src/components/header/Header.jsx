@@ -7,13 +7,9 @@ export const Header = ({children}) => {
     return (
         <nav id={styles.headerElement}>
             <div className={styles.headerLayout}>
-                <Link to='home'><div className="header-menu home">Home</div></Link>
-                <Link to='shop'>
-                    <div className="header-menu shop">Shop</div>
-                </Link>
-                <Link to='checkout'>
-                    <div className="header-menu cart">{children}</div>
-                </Link>
+                <Link to='' className="header-menu home">Home</Link>
+                <Link className="header-menu shop" to='shop'>Shop</Link>
+                <Link to='checkout' className="header-menu cart">{children}</Link>
             </div>
         </nav>
     )

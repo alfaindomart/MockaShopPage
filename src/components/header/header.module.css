@@ -1,6 +1,6 @@
 #headerElement {
     position: sticky;
-    background-color: forestgreen;
+    background-color: rgb(255, 255, 255);
     min-width: 100%;
     max-height: 15vh;
     height: 100%;
@@ -9,5 +9,12 @@
 .headerLayout {
     display: flex;
     gap: 8px;
-    padding: 1rem;
+    padding-left: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerLayout > * {
+    max-height: auto;
+    padding: 0.3rem;
 }

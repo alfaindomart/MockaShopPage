@@ -1,4 +1,21 @@
+.cartLayout {
+     margin: 0;
+     padding: 0;
+}
+
 img {
-    max-width: 1rem;
+    width: 2rem;
     height: auto;
+}
+
+.cartAmount {
+    position: absolute;
+    background-color: brown;
+    text-align: center;
+    color: white;
+    border-radius: 100%;
+    min-width: 1rem;
+    min-width: 1rem;
+    top: -38px;
+    right: -12px;
 }

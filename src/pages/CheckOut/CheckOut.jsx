@@ -19,8 +19,11 @@ export const CheckOut = () => {
                         <div className={styles.prodImageWrapper}>
                             <img src={product.image} alt="" />
                         </div>
-                        <div className={styles.productTitle}>{product.title}</div>
-                        <div className={styles.productPrice}>{product.price}</div>
+                        <div className={styles.productInfo1}>
+                            <div className={styles.productTitle}>{product.title}</div>
+                            <div className={styles.productPrice}>{product.price}</div>
+                            <input type="number" name="" id="" />
+                        </div>
                         <div className={styles.subTotal}>{product.price * product.amount}</div>
                         <button onClick={() => {setInCart(inCart.filter(prod => prod.id !== product.id))}}>X</button>
                     </div>

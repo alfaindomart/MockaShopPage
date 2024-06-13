@@ -23,7 +23,7 @@ export const SingleProduct = () => {
                 <img src={product.image} alt={'a product picture of a ' + product.title} />
             </div>
             <div className={styles.informationLayout}>
-                <div className={styles.productTitle}>{product.title}</div>
+                <h2 className={styles.productTitle}>{product.title}</h2>
                 <div className={styles.productRating}>
                     <Rating 
                     initialValue={product.rating.rate}
